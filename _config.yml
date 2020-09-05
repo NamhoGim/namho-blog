@@ -105,3 +105,9 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:NamhoGim/NamhoGim.github.io.git
+
+search:
+  path: search.xml
+  field: all
+  content: true
+  format: html
