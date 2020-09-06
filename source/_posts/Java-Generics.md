@@ -132,36 +132,91 @@ public class Box<T> {
 
 ### Generic Methods
 
-TBD
+*Generic methods* are methods that introduce their own type parameters.
+This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as class constructors.
+
+The syntax for a generic method includes a list of type parameters, inside angle brackets, which appears before the method's return type. For static generic methods, the type parameter section must appear before the method's return type.
+
+The `Util` class includes a generic method, `compare`, which compares two `pair` objects:
+
+```java
+public class Util {
+  public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
+    return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
+  }
+}
+
+public class Pair<K, V> {
+
+  private K key;
+  private V value;
+
+  public Pair(K key, V value) {
+    this.key = key;
+    this.value = value;
+  }
+
+  public void setKey(K key) { this.key = key; }
+  public void setValue(V value) { this.value = value; }
+  public K getKey()   { return key; }
+  public V getValue() { return value; }
+}
+```
 
 ### Bounded Type Parameters
 
-TBD
+There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses.
+This is what *bounded type parameters are for*.
 
-### Wildcards
-
-TBD
-
-#### Upperbounded Wildcards
-
-TBD
-
-#### LowerBounded Wildcards
-
-TBD
+To declare a bounded type parmeter, list hte type parameter's name. followed by the extends keyword, followed by its *upper bound*, which in this example is Number. Note that, in this context, `extends` is used in a general sense to mean either "extends" (as in classed) or "implements" (as in interfaces)
 
 #### Multiple Bounds
 
-TBD
+The preceding example illustrates the use of a type parameter with a single bound, but a type parameter can have *multiple bounds*:
+
+```java
+<T extends B1 & B2 & B3>
+```
+
+If one of the bounds is class, it must be specified first. For example:
+
+```java
+class A { /* ... */}
+interface B { /* ... */}
+interface C { /* ... */ }
+
+class D <T extends A & B & C> { /* ... */ }
+```
+
+If bound `A` is not specified first, you get a compile-time error.
+
+### Wildcards
+
+In generic code, the question mark (?), called the *wildcard*, represents an unknown type. The wildcard can be used in a variety of situations: as the type of a parameter, field, or local variable; sometimes as a return type. The wildcard is never used as a type argument for a generic method invocation, a generic class instance creation, or a supertype.
+
+#### Unbounded Wildcards
+
+The unbounded wildcard type is specified using the wildcards character (`?`), for example, List<?>, This is called *list of unknown type*. There are two senarios where an unbounded wildcard is a useful appoach:
+
+- If you are writing a method that can be implemented using functionality provided in the `object` class.
+- When the code is using methods in the generic class that don't depend on the type parameter.
+
+#### Upperbounded Wildcards
+
+To declare an upper-bounded wildcard, use the wildcard character (`?`), followed by the `extends` keyword, followed by its `upper bound`. Note that, in this context, `extends` is used in general senese to mean either "extends" (as in classes) or "implements" (as in interfaces).
+
+#### LowerBounded Wildcards
+
+A lower bounded wildcard is expressed using the wildcard character (`?`), follwing by the `super` keyword, followed by its *lower bound*: `<? super A>`
+
+Say you want to write a method that puts `Integer` objects into a list. To maximize flexibility, you would like the method to work on `List<Integer>`, `List<Number>`, and `List<Object>` -- anything that can hold `Integer` values.
 
 ### Restrictions on Generics
-
-TBD
 
 - Cannot instantiate generic types with primitypes
 
   ```java
-  Pair<int, char> p = new Pair<>(8, 'a'); // compile-time error 
+  Pair<int, char> p = new Pair<>(8, 'a'); // compile-time error
   Pair<Integer, Character> p = new Pair<>(8, 'a');
   ```
 
