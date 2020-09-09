@@ -1,9 +1,12 @@
 ---
 title: Java Collections Framework
 tags:
+  - Java
+  - collections
+categories:
   - - Java
     - collections
-date: 2020-09-09 21:39:33
+date: 2020-09-09 21:46:14
 ---
 
 
@@ -41,12 +44,12 @@ date: 2020-09-09 21:39:33
 
 ## Method of Collection Interfaces
 
-|메소드|설명|
-|-----|----|
+|Method|Description|
+|:-----|:----|
 |`boolean add(E e)`| Ensures that collection contains the specified element. |
 |`boolean addAll(Collection<? exteionds E> c)`| Adds all of the elements in the specified collection to this collection. |
 |`void clear()`| Removes all of the elements from this collection. |
-|`boolean contains(Object o)`| 컬렉션에 요소 o가 존재하는지 확인한다. |
+|`boolean contains(Object o)`| Returns `true` if this collection contains the specified element. |
 |`boolean containsAll(Collection<?> c)` | Returns `true` if this collection contains all of the elements in the specified collection. |
 |`boolean equals(Object o)` | Compares the specified object with this collection for equality. |
 |`boolean isEmpty()` | Returns `true` if this collection contains no elements. |
