@@ -15,7 +15,7 @@ category:
 ### Benefits of using generics
 
 - Stronger type checks at complie time.
-  - A Java complier applies string type ckecking to generic code and issues errors if the code violates type safety. Fixing complie-time erros is easier than fixing runtime errors, which can be difficult to find.
+  - A Java complier applies strong type ckecking to generic code and issues errors if the code violates type safety. Fixing complie-time erros is easier than fixing runtime errors, which can be difficult to find.
 
 - Elimination of casts.
   - The following code snippet without generics requires casting:
@@ -81,7 +81,7 @@ Box<Integer> integerBox = new Box<Integer>();
 
 ### Multiple Type Parameters
 
-- A generic class cana have multiple type parameters. For example, the generic `OrderedPair` class, which implements the generic `Pair` interface:
+- A generic class can have multiple type parameters. For example, the generic `OrderedPair` class, which implements the generic `Pair` interface:
 
 ```java
 public interface Pair<K, V> {
