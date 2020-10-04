@@ -207,7 +207,7 @@ The Stream API provides such facilities through the `allMatch`, `anyMatch`, `non
 - `anyMatch(Predicate<T>)`: Checking to see if a predicate matches at least one element
 - `allMatch(Predicate<T>)`: Checking to see if a predicate matches all elements
 
-```java
+  ```java
   boolean isHealthy = menu.stream()
                           .allMatch(dish -> dish.getCalories() < 1000);
   ```
