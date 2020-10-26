@@ -50,15 +50,15 @@ darkmode: true
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: /images/Tiffany_Blue.ico
+  medium: /images/Tiffany_Blue.ico
+  apple_touch_icon: /images/Tiffany_Blue.ico
+  safari_pinned_tab: /images/Tiffany_Blue.ico
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Custom Logo (Warning: Do not support scheme Mist)
-custom_logo: #/images/Tiffany_Blue.png
+custom_logo: # /images/Tiffany_Blue.ico
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -141,7 +141,7 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/NamhoGim || fab fa-github
-  #LinkedIn: https://www.linkedin.com/in/namho-kim-6b1848118 || fab fa-linkedin
+  LinkedIn: https://www.linkedin.com/in/namho-kim-6b1848118 || fab fa-linkedin
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
