@@ -22,20 +22,20 @@ for it.) In addition, streams can be processed in parallel _transparently_, with
 ```java
 List<Dish> lowCaloricDishes = new ArrayList<>();
 for(Dish dish: menu) {
-    if(dish.getCalories() < 400) {
-        lowCaloricDishes.add(dish); // Filters the elements using an accumulator
-    }
+  if(dish.getCalories() < 400) {
+    lowCaloricDishes.add(dish); // Filters the elements using an accumulator
+  }
 }
 
 Collections.sort(lowCaloricDishes, new Comparator<Dish>() { // Sorts the dishes with an anonymous class
-    public int compare(Dish dish1, Dish dish2) {
-        return Integer.compare(dish1.getCalories(), dish2.getCalories());
-    }
+  public int compare(Dish dish1, Dish dish2) {
+    return Integer.compare(dish1.getCalories(), dish2.getCalories());
+  }
 });
 
 List<String> lowCaloricDishesName = new ArrayList<>();
 for(Dish dish: lowCaloricDishes) {
-    lowCaloricDishesName.add(dish.getName()); // Processes the sorted list to select the names of dishes
+  lowCaloricDishesName.add(dish.getName()); // Processes the sorted list to select the names of dishes
 }
 ```
 
